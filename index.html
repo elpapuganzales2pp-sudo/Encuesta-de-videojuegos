@@ -3,81 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encuesta de Videojuegos</title>
+  <title>encuestadevideojuegos.com</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Encuesta de Videojuegos</h1>
-      <p>Cuéntanos qué prefieres y califica tus juegos favoritos.</p>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="badge">Encuesta</span>
+        <h1>encuestadevideojuegos.com</h1>
+        <p>Comparte tus preferencias de juego y ayuda a mejorar las recomendaciones de la comunidad.</p>
+      </div>
+      <div class="hero-preview">
+        <div class="preview-card">
+          <p class="preview-label">Rápido • Moderno • Gratis</p>
+          <div class="preview-stat">
+            <strong>3</strong>
+            <span>minutos para completar</span>
+          </div>
+          <div class="preview-stat">
+            <strong>4</strong>
+            <span>categorías de juego</span>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <form id="surveyForm">
-      <div class="field">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-      </div>
-
-      <div class="field">
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" placeholder="Tu edad" min="10" max="100" required>
-      </div>
-
-      <div class="field">
-        <label>¿Qué juegas normalmente?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="normalmente" value="Roblox" required> 1. Roblox</label>
-          <label><input type="radio" name="normalmente" value="Call of Duty"> 2. Call of Duty</label>
-          <label><input type="radio" name="normalmente" value="Nada de las opciones"> 3. Nada de las opciones</label>
+    <main class="content">
+      <section class="survey-card">
+        <div class="survey-header">
+          <div>
+            <p class="eyebrow">Tu opinión importa</p>
+            <h2>Completa la encuesta de videojuegos</h2>
+          </div>
+          <div class="survey-tag">Nueva versión</div>
         </div>
-      </div>
 
-      <div class="field">
-        <label for="plataforma">Plataforma favorita:</label>
-        <select id="plataforma" name="plataforma" required>
-          <option value="">Selecciona una</option>
-          <option value="PC">PC</option>
-          <option value="Consola">Consola</option>
-          <option value="Móvil">Móvil</option>
-          <option value="VR">Realidad virtual</option>
-        </select>
-      </div>
+        <form id="surveyForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
 
-      <div class="field">
-        <label>Género preferido:</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="genero" value="Acción"> Acción</label>
-          <label><input type="checkbox" name="genero" value="Aventura"> Aventura</label>
-          <label><input type="checkbox" name="genero" value="Deporte"> Deporte</label>
-          <label><input type="checkbox" name="genero" value="RPG"> RPG</label>
-          <label><input type="checkbox" name="genero" value="Estrategia"> Estrategia</label>
+            <div class="field">
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" name="edad" placeholder="Tu edad" min="10" max="100" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>¿Qué juegas normalmente?</label>
+            <div class="option-grid">
+              <label class="option-card"><input type="radio" name="normalmente" value="Roblox" required><span>1. Roblox</span></label>
+              <label class="option-card"><input type="radio" name="normalmente" value="Call of Duty"><span>2. Call of Duty</span></label>
+              <label class="option-card"><input type="radio" name="normalmente" value="Nada de las opciones"><span>3. Nada de las opciones</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="plataforma">Plataforma favorita</label>
+            <select id="plataforma" name="plataforma" required>
+              <option value="">Selecciona una</option>
+              <option value="PC">PC</option>
+              <option value="Consola">Consola</option>
+              <option value="Móvil">Móvil</option>
+              <option value="VR">Realidad virtual</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Género preferido</label>
+            <div class="option-grid">
+              <label class="option-card"><input type="checkbox" name="genero" value="Acción"><span>Acción</span></label>
+              <label class="option-card"><input type="checkbox" name="genero" value="Aventura"><span>Aventura</span></label>
+              <label class="option-card"><input type="checkbox" name="genero" value="Deporte"><span>Deporte</span></label>
+              <label class="option-card"><input type="checkbox" name="genero" value="RPG"><span>RPG</span></label>
+              <label class="option-card"><input type="checkbox" name="genero" value="Estrategia"><span>Estrategia</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="juego">Juego favorito</label>
+            <input type="text" id="juego" name="juego" placeholder="Nombre del juego" required>
+          </div>
+
+          <div class="field range-field">
+            <label for="rating">¿Cómo calificas los videojuegos?</label>
+            <div class="range-control">
+              <input type="range" id="rating" name="rating" min="0" max="10" value="7">
+              <span id="ratingValue">7</span>/10
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="comentarios">Comentarios adicionales</label>
+            <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe aquí tus comentarios..."></textarea>
+          </div>
+
+          <button type="submit">Enviar encuesta</button>
+        </form>
+
+        <div id="result" class="result hidden">
+          <h2>Gracias por participar</h2>
+          <p id="resultText"></p>
         </div>
-      </div>
-
-      <div class="field">
-        <label for="juego">Juego favorito:</label>
-        <input type="text" id="juego" name="juego" placeholder="Nombre del juego" required>
-      </div>
-
-      <div class="field">
-        <label for="rating">¿Cómo calificas los videojuegos?</label>
-        <input type="range" id="rating" name="rating" min="0" max="10" value="7">
-        <span id="ratingValue">7</span>/10
-      </div>
-
-      <div class="field">
-        <label for="comentarios">Comentarios adicionales:</label>
-        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe aquí tus comentarios..."></textarea>
-      </div>
-
-      <button type="submit">Enviar encuesta</button>
-    </form>
-
-    <div id="result" class="result hidden">
-      <h2>Gracias por participar</h2>
-      <p id="resultText"></p>
-    </div>
+      </section>
+    </main>
   </div>
 
   <script src="script.js"></script>
